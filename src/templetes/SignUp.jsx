@@ -4,7 +4,7 @@ import {useDispatch} from "react-redux";
 import {signUp} from "../reducks/users/operations";
 import {push} from "connected-react-router"
 
-const SignIn = () => {
+const SignUp = () => {
     const dispatch = useDispatch();
 
     const [email, setEmail] = useState("")
@@ -55,10 +55,10 @@ const SignIn = () => {
                     onClick={() => dispatch(signUp(username, email, password, confirmPassword))}
                 />
                 <div className="module-spacer--small" />
-                <p className="u-text-small" onClick={() => dispatch(push('/signin'))}>アカウントをお持ちの方はこちら</p>
+                <p className="u-text-small" onClick={() => dispatch(push('/SignUp'))}>アカウントをお持ちの方はこちら</p>
             </div>
         </div>
     );
 };
 
-export default SignIn;
+export default SignUp;
