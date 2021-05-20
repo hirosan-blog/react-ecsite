@@ -66,7 +66,7 @@ export const fetchProductsInCart = (products) => {
 export const listenAuthState = () => {
     return async (dispatch) => {
         return auth.onAuthStateChanged(user => {
-            if (user) {
+            if (user) {//ユーザー認証が終わっていたら
                 usersRef.doc(user.uid).get()
                     .then(snapshot => {
                         const data = snapshot.data()
